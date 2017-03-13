@@ -28,23 +28,46 @@ public class SimpsonsEpisodeGenerator{
 	}
 	
 	public static int generateEpisode(Random randomGenerator, int season){
-		if(season == 1){
-			return randomGenerator.nextInt(13) + 1;
-		}else if(season == 2 || season == 4 || season == 5 || season == 11 || season == 13 || season == 14 || season == 15 || season == 17 || season == 18 || season == 22 || season == 23 || season == 24 || season == 25 || season == 26 || season == 27){
-			return randomGenerator.nextInt(22) + 1;
-		}else if(season == 3){
-			return randomGenerator.nextInt(24) + 1;
-		}else if(season == 6 || season == 7 || season == 8 || season == 9){
-			return randomGenerator.nextInt(25) + 1;
-		}else if(season == 10 || season == 21){
-			return randomGenerator.nextInt(23) + 1;
-		}else if(season == 12 || season == 16 || season == 20){
-			return randomGenerator.nextInt(21) + 1;
-		}else if(season == 19){
-			return randomGenerator.nextInt(20) + 1;
-		}else{
-			return 0;
+		
+		switch(season){
+			case 1:
+				return randomGenerator.nextInt(13) + 1;
+			case 19:
+				return randomGenerator.nextInt(20) + 1;
+			case 12:
+			case 16:
+			case 20:
+				return randomGenerator.nextInt(21) + 1;
+			case 2:
+			case 4:
+			case 5:
+			case 11:
+			case 13:
+			case 14:
+			case 15:
+			case 17:
+			case 18:
+			case 22:
+			case 23:
+			case 24:
+			case 25:
+			case 26:
+			case 27:
+				return randomGenerator.nextInt(22) + 1;
+			case 10:
+			case 21:
+				return randomGenerator.nextInt(23) + 1;
+			case 3:
+				return randomGenerator.nextInt(24) + 1;
+			case 6:
+			case 7:
+			case 8:
+			case 9:
+				return randomGenerator.nextInt(25) + 1;
+			default:
+				return 0;
 		}
+
 	}
 	
 	
