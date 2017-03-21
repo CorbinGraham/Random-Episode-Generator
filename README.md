@@ -7,6 +7,6 @@
   object is randomly selected and displayed for the user.
   
 ## Resources
-  Episode name and number <https://en.wikipedia.org/wiki/List_of_The_Simpsons_episodes>
-  Episode Bios <http://www.imdb.com/title/tt0096697/episodes>
-  
+  Episode name and number <https://en.wikipedia.org/wiki/List_of_The_Simpsons_episodes>  
+  Episode Bios <http://www.imdb.com/title/tt0096697/episodes>  
+ 
