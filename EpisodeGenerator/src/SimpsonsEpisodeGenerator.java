@@ -4,18 +4,18 @@ import java.util.LinkedList;
 import java.io.*;
 
 public class SimpsonsEpisodeGenerator{
-	public static LinkedList<EpisodeObject> episodeBios[] = (LinkedList<EpisodeObject>[]) new LinkedList<?>[28];;
+	public static LinkedList<EpisodeObject> episodeNameAndNumber[] = (LinkedList<EpisodeObject>[]) new LinkedList<?>[28];;
 	
 	public static void main(String[] args){
 		
-		for(int i = 0; i < episodeBios.length; i++){
-			if(episodeBios[i] == null){
-				episodeBios[i] = new LinkedList<EpisodeObject>();
+		for(int i = 0; i < episodeNameAndNumber.length; i++){
+			if(episodeNameAndNumber[i] == null){
+				episodeNameAndNumber[i] = new LinkedList<EpisodeObject>();
 			}
 		}
 		
 		try{
-			readInFile();
+			readInEpisodesFile();
 		}catch(Exception e){
 			System.err.println(e);
 		}
@@ -71,10 +71,14 @@ public class SimpsonsEpisodeGenerator{
 	}
 	
 	
-	public static void readInFile() throws IOException{
+	public static void readInEpisodesFile() throws IOException{
 		FileReader reader  = new FileReader("episodeNumbersandNames.txt");
 		BufferedReader input = new BufferedReader(reader);
 		String currentLine;
+		
+		FileReader bioReader  = new FileReader("episodeBiosFinal.txt");
+		BufferedReader bioInput = new BufferedReader(bioReader);
+		String bioCurrentLine;
 		
 		//The first string array will be used to split current line into 3 seperate arrays based on the location of quotation marks which are only ever around the title of an episode
 		String [] nameQuoteSplit = new String[3];
@@ -86,6 +90,7 @@ public class SimpsonsEpisodeGenerator{
 		String episodeName;
 		
 		while((currentLine = input.readLine()) != null){
+			
 			nameQuoteSplit = currentLine.split("\"");
 			currentLineSplit = nameQuoteSplit[0].split("\\s+");
 			
@@ -93,19 +98,26 @@ public class SimpsonsEpisodeGenerator{
 				currentSeasonNumber = Integer.parseInt(currentLineSplit[1]);
 			}
 			else{
-				episodeAiringNumber = Integer.parseInt(currentLineSplit[0]);
-				episodeSeasonNumber = Integer.parseInt(currentLineSplit[1]);
-				episodeName = nameQuoteSplit[1];
+				if((bioCurrentLine = bioInput.readLine()) != null){
+					while(bioCurrentLine.isEmpty()){
+						bioCurrentLine = bioInput.readLine();
+					}
+					episodeAiringNumber = Integer.parseInt(currentLineSplit[0]);
+					episodeSeasonNumber = Integer.parseInt(currentLineSplit[1]);
+					episodeName = nameQuoteSplit[1];
 				
-				episodeBios[currentSeasonNumber - 1].add(new EpisodeObject(episodeAiringNumber, episodeSeasonNumber, currentSeasonNumber, episodeName));
-				
+					episodeNameAndNumber[currentSeasonNumber - 1].add(new EpisodeObject(episodeAiringNumber, episodeSeasonNumber, currentSeasonNumber, episodeName, bioCurrentLine));
+				}
 			}
 		}input.close();
+		bioInput.close();
 	}
 	
+	
 	public static void printEpisodeDetails(int season, int episode){
-		System.out.println(episodeBios[season - 1].get(episode - 1).getEpisodeName());
-		System.out.printf("Season: %s Episode: %s",season,episode);
+		System.out.println(episodeNameAndNumber[season - 1].get(episode - 1).getEpisodeName());
+		System.out.printf("Season: %s Episode: %s\n",season,episode);
+		System.out.println("Bio: " + episodeNameAndNumber[season - 1].get(episode - 1).getEpisodeBio());
 		
 	}
 	
