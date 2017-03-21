@@ -117,7 +117,7 @@ public class SimpsonsEpisodeGenerator{
 	public static void printEpisodeDetails(int season, int episode){
 		System.out.println(episodeNameAndNumber[season - 1].get(episode - 1).getEpisodeName());
 		System.out.printf("Season: %s Episode: %s\n",season,episode);
-		System.out.println("Bio: " + episodeNameAndNumber[season - 1].get(episode - 1).getEpisodeBio());
+		System.out.println("Episode Bio: " + episodeNameAndNumber[season - 1].get(episode - 1).getEpisodeBio());
 		
 	}
 	

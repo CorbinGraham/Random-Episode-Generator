@@ -258,6 +258,7 @@ Season 11
 247	21	"It's a Mad, Mad, Mad, Mad Marge"	Steven Dean Moore	Larry Doyle	May 14, 2000	BABF18	7.5
 248	22	"Behind the Laughter"	Mark Kirkland	Tim Long, George Meyer, Mike Scully & Matt Selman	May 21, 2000	BABF19	8.3
 Season 12
+249	1	"Treehouse of Horror XI" hhh
 250	2	"A Tale of Two Springfields"	Shaun Cashman	John Swartzwelder	November 5, 2000	BABF20	16.2
 251	3	"Insane Clown Poppy"	Bob Anderson	John Frink & Don Payne	November 12, 2000	BABF17	16.4
 252	4	"Lisa the Tree Hugger"	Steven Dean Moore	Matt Selman	November 19, 2000	CABF01	14.9
@@ -302,6 +303,7 @@ Season 13
 290	21	"The Frying Game"	Michael Polcino	John Swartzwelder	May 19, 2002	DABF16	10.8
 291	22	"Poppa's Got a Brand New Badge"	Pete Michels	Dana Gould	May 22, 2002	DABF17	8.2
 Season 14
+292	1	"Treehouse of Horror XIII" fff
 293	2	"How I Spent My Strummer Vacation"	Mike B. Anderson	Mike Scully	November 10, 2002	DABF22	12.5[274]
 294	3	"Bart vs. Lisa vs. the Third Grade"	Steven Dean Moore	Tim Long	November 17, 2002	DABF20	13.3[275]
 295	4	"Large Marge"	Jim Reardon	Ian Maxtone-Graham	November 24, 2002	DABF18	17.4[276]
